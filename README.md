@@ -2,8 +2,26 @@
 
 Deploying on vps
 ===============
-1. cd deploy, follow instruction on Readme.md there. 
-2. Make sure to run adhoc commands (see Readme.md)
+*  cd deploy, follow instruction on Readme.md there. 
+*  Make sure to run adhoc commands (see Readme.md)
+*  Login to the server and do the following: 
+  
+  as root# sudo apt-get install libjpeg-dev
+
+  login as the application user and 
+
+  as user:  . ./bin/activate
+
+            . ./bin/postactivate
+
+            pip uninstall pillow
+
+            easy_install pillow
+
+            (make sure Jpeg support is built!)a
+
+           python manage.py createsuperuser
+
 
 
 Wagtail demo

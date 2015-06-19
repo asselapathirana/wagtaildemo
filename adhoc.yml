@@ -25,9 +25,9 @@
        settings: "{{ django_settings_file }}"
      environment: django_environment
 
-   - name:  create super user
+   - name:  update index
      django_manage:
-      command: createsuperuser
+      command: update_index
       app_path: "{{ project_path }}"
       virtualenv: "{{ virtualenv_path }}"
       settings: "{{ django_settings_file }}"
