@@ -1,0 +1,10 @@
+[all:vars]
+env=dev
+
+[webservers]
+testd.pathirana.net
+
+[dbservers]
+testd.pathirana.net
+
+
