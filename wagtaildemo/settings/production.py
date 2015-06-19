@@ -45,3 +45,4 @@ DATABASES = {
 }
 STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
 
+ALLOWED_HOSTS=[ os.getenv('HOSTS1'), os.getenv('HOSTS2') ]

@@ -16,7 +16,7 @@
      
 
   tasks: 
-   
+ 
    - name:  load initial data
      django_manage:
        command: load_initial_data
