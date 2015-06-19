@@ -35,3 +35,12 @@ try:
 	from .local import *
 except ImportError:
 	pass
+
+
+SECRET_KEY=os.getenv('DJANGO_SECRET_KEY','')
+
+DATABASES = {
+    'default':
+        {'HOST': 'localhost', 'USER': os.getenv('DATABASE_USER',''), 'PASSWORD': os.getenv('DATABASE_PASSWORD',''), 'ENGINE': 'django.db.backends.postgresql_psycopg2', 'PORT': '', 'NAME': os.getenv('DATABASE_NAME','')}
+}
+STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
