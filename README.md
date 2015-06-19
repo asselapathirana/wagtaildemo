@@ -1,5 +1,11 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/torchbox/wagtaildemo)
 
+Deploying on vps
+===============
+1. cd deploy, follow instruction on Readme.md there. 
+2. Make sure to run adhoc commands (see Readme.md)
+
+
 Wagtail demo
 =======================
 
