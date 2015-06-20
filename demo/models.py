@@ -74,6 +74,16 @@ class ContactFields(models.Model):
     country = models.CharField(max_length=255, blank=True)
     post_code = models.CharField(max_length=10, blank=True)
 
+    search_fields=(
+ 	index.SearchField("telephone",partial_match=True),
+ 	index.SearchField("email",partial_match=True),
+ 	index.SearchField("address_1",partial_match=True),
+ 	index.SearchField("address_2",partial_match=True),
+ 	index.SearchField("city",partial_match=True),
+ 	index.SearchField("country",partial_match=True),
+ 	index.SearchField("post_code",partial_match=True),
+                  )
+
     panels = [
         FieldPanel('telephone'),
         FieldPanel('email'),
@@ -169,7 +179,7 @@ class HomePage(Page):
     body = RichTextField(blank=True)
 
     search_fields = Page.search_fields + (
-        index.SearchField('body'),
+        index.SearchField('body',partial_match=True),
     )
 
     class Meta:
@@ -238,7 +248,7 @@ class StandardPage(Page):
     )
 
     search_fields = Page.search_fields + (
-        index.SearchField('intro'),
+        index.SearchField('intro',partial_match=True),
         index.SearchField('body'),
     )
 
@@ -265,7 +275,7 @@ class BlogIndexPage(Page):
     intro = RichTextField(blank=True)
 
     search_fields = Page.search_fields + (
-        index.SearchField('intro'),
+        index.SearchField('intro',partial_match=True),
     )
 
     @property
@@ -386,11 +396,11 @@ class PersonPage(Page, ContactFields):
         related_name='+'
     )
 
-    search_fields = Page.search_fields + (
-        index.SearchField('first_name'),
-        index.SearchField('last_name'),
-        index.SearchField('intro'),
-        index.SearchField('biography'),
+    search_fields = Page.search_fields + ContactFields.search_fields + (
+        index.SearchField('first_name',partial_match=True),
+        index.SearchField('last_name',partial_match=True),
+        index.SearchField('intro',partial_match=True),
+        index.SearchField('biography',partial_match=True),
     )
 
 PersonPage.content_panels = [
@@ -446,7 +456,7 @@ class EventIndexPage(Page):
     intro = RichTextField(blank=True)
 
     search_fields = Page.search_fields + (
-        index.SearchField('intro'),
+        index.SearchField('intro',partial_match=True),
     )
 
     @property
@@ -530,9 +540,9 @@ class EventPage(Page):
     )
 
     search_fields = Page.search_fields + (
-        index.SearchField('get_audience_display'),
-        index.SearchField('location'),
-        index.SearchField('body'),
+        index.SearchField('get_audience_display',partial_match=True),
+        index.SearchField('location',partial_match=True),
+        index.SearchField('body',partial_match=True),
     )
 
     @property

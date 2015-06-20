@@ -25,14 +25,6 @@
        settings: "{{ django_settings_file }}"
      environment: django_environment
 
-   - name:  update index
-     django_manage:
-      command: update_index
-      app_path: "{{ project_path }}"
-      virtualenv: "{{ virtualenv_path }}"
-      settings: "{{ django_settings_file }}"
-     environment: django_environment
-
    - name: Run Django collectstatic
      django_manage:
         command: collectstatic
@@ -41,5 +33,22 @@
         settings: "{{ django_settings_file }}"
      environment: django_environment
 
+
+   - name: replace all instances of 'wagtaildemo' in settings file with application_directory
+     replace: dest="{{virtualenv_path}}/{{project_name}}/{{application_name}}/settings/production.py" regexp="wagtaildemo" replace="{{application_directory}}"  backup=yes
+
+     tags: replace 
+
+   - name: Restart Supervisor
+     supervisorctl: name={{ application_directory }} state=restarted
+     tags: sup
+
+   - name:  update index
+     django_manage:
+      command: update_index
+      app_path: "{{ project_path }}"
+      virtualenv: "{{ virtualenv_path }}"
+      settings: "{{ django_settings_file }}"
+     environment: django_environment
 
   
