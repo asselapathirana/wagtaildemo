@@ -514,7 +514,8 @@ class EventPageSpeaker(Orderable, LinkFields):
         ImageChooserPanel('image'),
         MultiFieldPanel(LinkFields.panels, "Link"),
     ]
-
+    
+    
 
 class EventPage(Page):
     date_from = models.DateField("Start date")
