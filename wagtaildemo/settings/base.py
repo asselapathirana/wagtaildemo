@@ -161,7 +161,7 @@ INSTALLED_APPS = (
     'wagtail.wagtailredirects',
     'wagtail.wagtailforms',
     'wagtail.wagtailsites',
-
+    'wagtailmap.home',
     'demo',
 )
 

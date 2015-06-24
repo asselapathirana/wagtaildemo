@@ -1,3 +1,6 @@
 [submodule "django_deploy_with_ansible"]
 	path = deploy
 	url = git@github.com:asselapathirana/django_deploy_with_ansible.git
+[submodule "wagtailmap"]
+	path = wagtailmap
+	url = git@github.com:asselapathirana/wagtailmap.git
