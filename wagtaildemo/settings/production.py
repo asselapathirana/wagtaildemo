@@ -3,10 +3,14 @@ from .base import *
 DEBUG = False
 
 
+
 WAGTAILSEARCH_BACKENDS = {
     'default': {
         'BACKEND': 'wagtail.wagtailsearch.backends.elasticsearch.ElasticSearch',
-        'INDEX': 'wagtaildemo'
+        'URLS': os.getenv('WAGTAILSEARCH_URL',''),
+        'INDEX': os.getenv('WAGTAILSEARCH_INDEX',''),
+        'TIMEOUT' : 5,
+
     }
 }
 

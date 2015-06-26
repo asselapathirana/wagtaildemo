@@ -17,13 +17,13 @@
 
   tasks: 
  
-   - name:  load initial data
-     django_manage:
-       command: load_initial_data
-       app_path: "{{ project_path }}"
-       virtualenv: "{{ virtualenv_path }}"
-       settings: "{{ django_settings_file }}"
-     environment: django_environment
+#   - name:  load initial data
+#     django_manage:
+#       command: load_initial_data
+#       app_path: "{{ project_path }}"
+#       virtualenv: "{{ virtualenv_path }}"
+#       settings: "{{ django_settings_file }}"
+#     environment: django_environment
 
    - name: Run Django collectstatic
      django_manage:
