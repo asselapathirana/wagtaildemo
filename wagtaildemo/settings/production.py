@@ -7,7 +7,7 @@ DEBUG = False
 WAGTAILSEARCH_BACKENDS = {
     'default': {
         'BACKEND': 'wagtail.wagtailsearch.backends.elasticsearch.ElasticSearch',
-        'URLS': os.getenv('WAGTAILSEARCH_URL',''),
+        'URLS': [os.getenv('WAGTAILSEARCH_URL','')],
         'INDEX': os.getenv('WAGTAILSEARCH_INDEX',''),
         'TIMEOUT' : 5,
 
