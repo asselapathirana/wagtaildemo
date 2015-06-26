@@ -24,6 +24,17 @@ Deploying on vps
 
 
 
+Issues with images
+=================
+
+Accidental deleting of images in media/images directory will cause broken image urls (this is a bug currently: https://github.com/torchbox/wagtail/issues/1066)
+
+   ./manage.py shell
+   
+   >>> from wagtail.wagtailimages.models import Rendition
+
+   >>> Rendition.objects.all().delete()
+
 Wagtail demo
 =======================
 
