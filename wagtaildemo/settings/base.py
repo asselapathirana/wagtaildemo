@@ -162,6 +162,7 @@ INSTALLED_APPS = (
     'wagtail.wagtailforms',
     'wagtail.wagtailsites',
     'wagtailmap.home',
+    'freepages',
     'demo',
 )
 

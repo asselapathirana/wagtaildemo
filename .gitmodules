@@ -4,3 +4,6 @@
 [submodule "wagtailmap"]
 	path = wagtailmap
 	url = https://github.com/asselapathirana/wagtailmap.git
+[submodule "freepages"]
+	path = freepages
+	url = https://github.com/asselapathirana/wagtail_freepages.git
